@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly/core/utils.dart';
+import 'package:my_bookly/feature/presentation/viewmodels/views/widgets/sliding_text.dart';
 
 class splash_view_body extends StatefulWidget {
   const splash_view_body({Key? key}) : super(key: key);
@@ -16,17 +17,9 @@ class _splash_view_bodyState extends State<splash_view_body>with SingleTickerPro
   void initState() {
     // TODO: implement initState
     super.initState();
-    aC = AnimationController(vsync: this, duration: Duration(seconds: 1));
-    a = Tween<Offset>(begin: (Offset(0, 10)), end: Offset.zero).animate(
-        aC);
-    aC.forward();
-    a.addListener(() {
-      setState(() {
-
-      });
-    })
-    ;
+    intilslider();
   }
+
 
   @override
   void dispose() {
@@ -45,13 +38,18 @@ class _splash_view_bodyState extends State<splash_view_body>with SingleTickerPro
           SizedBox(
             height: 6,
           ),
-          SlideTransition(
-            position: a,
-            child: Text('read free books', textAlign: TextAlign.center,style: TextStyle(fontSize: 25),),
-          )
+          silderingtext(a: a)
         ]);
+  }
+  void intilslider() {
+    aC = AnimationController(vsync: this, duration: Duration(seconds: 1));
+    a = Tween<Offset>(begin: (Offset(0, 10)), end: Offset.zero).animate(
+        aC);
+    aC.forward();
   }
 
 
+
 }
+
 
