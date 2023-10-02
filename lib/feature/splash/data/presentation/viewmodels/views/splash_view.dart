@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly/feature/presentation/viewmodels/views/widgets/splash_view_body.dart';
+import 'package:my_bookly/feature/splash/data/presentation/viewmodels/views/widgets/splash_view_body.dart';
+
 
 class splash_view extends StatelessWidget {
 
